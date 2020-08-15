@@ -8,46 +8,105 @@
   <title>Mission to Mars</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type = "text/css" href="style.css">
 </head>
 
 <body>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+  
   <div class="container-fluid">
     <div class="jumbotron text-center">
       <h1>Mars Mission!</h1>
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Click to get information for the mission</a></p>
     </div>
+  </div>
 
-    <h2>Latest Mars News</h2>
+  <div class_="news">
+    <h1>Latest Mars News</h1>
     <h3>{{theinformation.newstitle}}</h3>
     <h4>{{theinformation.paragraph}}</h4>
+  </div>
 
+  <div class_="featured">
     <h2>Featured Mars Image</h2> 
     <img width="600" length="500" src="{{theinformation.current_feature}}" alt="featured_image">
-
-    <h2>Current Weather on Mars</h2>
-    <p>{{theinformation.weather}}</p>
-    <br>
-    <h2>Mars Facts</h2>
-<!-- {{theinformation.facts}} -->
-
-
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Mars Facts
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a target="_blank" class="dropdown-item" href="http://localhost:5500/table.html">Mars Facts in Table</a>
   </div>
-</div>
+  
+  
+  <div class_="weather">
+  <h1>Current Weather on Mars</h1>
+    <h4>{{theinformation.weather}}</h4>
+  </div>
 
-    <h2>Mars Hemisphere</h2>
-    <img width="400" length="300" src="{{theinformation.cerberus}}" alt="cerberus">, <img width="400" length="300" src="{{theinformation.schiaparelli}}" alt="schiaparelli_image"><br>
-    <img width="400" length="300" src="{{theinformation.syrtis}}" alt="syrtis_image">, <img width="400" length="300" src="{{theinformation.valles}}" alt="valles_image">
+  <div class_="tablediv">
+      <h1>Mars Facts</h1>
+      <table border="1" class="dataframe">
+        <thead>
+          <tr style="text-align: right;">
+            <th>information</th>
+            <th>Mars</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Equatorial Diameter:</td>
+            <td>6,792 km</td>
+          </tr>
+          <tr>
+            <td>Polar Diameter:</td>
+            <td>6,752 km</td>
+          </tr>
+          <tr>
+            <td>Mass:</td>
+            <td>6.39 × 10^23 kg (0.11 Earths)</td>
+          </tr>
+          <tr>
+            <td>Moons:</td>
+            <td>2 (Phobos &amp; Deimos)</td>
+          </tr>
+          <tr>
+            <td>Orbit Distance:</td>
+            <td>227,943,824 km (1.38 AU)</td>
+          </tr>
+          <tr>
+            <td>Orbit Period:</td>
+            <td>687 days (1.9 years)</td>
+          </tr>
+          <tr>
+            <td>Surface Temperature:</td>
+            <td>-87 to -5 °C</td>
+          </tr>
+          <tr>
+            <td>First Record:</td>
+            <td>2nd millennium BC</td>
+          </tr>
+          <tr>
+            <td>Recorded By:</td>
+            <td>Egyptian astronomers</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+      <!-- <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Mars Facts
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a target="_blank" class="dropdown-item" href=table.html>Mars Facts in Table</a>
+        </div>
+      </div> -->
+    
+
+  <div class_="hems">
+    <h1>Mars Hemisphere</h1>
+    <img width="400" length="300" src="{{theinformation.cerberus}}" alt="cerberus"><h2>Cerberus</h2>, <img width="400" length="300" src="{{theinformation.schiaparelli}}" alt="schiaparelli_image"><h2>Schiaparelli</h2><br>
+    <img width="400" length="300" src="{{theinformation.syrtis}}" alt="syrtis_image"><h2>Syrtis</h2>, <img width="400" length="300" src="{{theinformation.valles}}" alt="valles_image"><h2>Valles</h2>
   </div>
-  </div>
+ 
 </body>
 
 </html>
